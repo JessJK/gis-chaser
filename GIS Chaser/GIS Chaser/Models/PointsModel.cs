@@ -9,6 +9,7 @@ namespace GIS_Chaser.Models
     public class PointsModel
     {
         private IPointsStorage _pointsStorage { get; set; }
+
         public PointsModel(IPointsStorage pointsStoragestorage)
         {
             _pointsStorage = pointsStoragestorage;

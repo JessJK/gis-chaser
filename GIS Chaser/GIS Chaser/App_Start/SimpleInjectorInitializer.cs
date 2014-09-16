@@ -44,7 +44,23 @@ namespace GIS_Chaser.App_Start
  
             container.RegisterSingle<IAppBuilder>(app);
 
-
+            container.RegisterPerWebRequest<
+                   ApplicationUserManager>();
+            
+            container.RegisterPerWebRequest<ApplicationDbContext>(() 
+              => new ApplicationDbContext(
+               "Your constring goes here"));
+            
+            container.RegisterPerWebRequest<IUserStore<
+              ApplicationUser>>(() => 
+                new UserStore<ApplicationUser>(
+                  container.GetInstance<ApplicationDbContext>()));
+ 
+            container.RegisterInitializer<ApplicationUserManager>(
+                manager => InitializeUserManager(manager, app));
+ 
+            container.RegisterMvcControllers(
+                    Assembly.GetExecutingAssembly());
 
             container.RegisterPerWebRequest<SignInManager<ApplicationUser, string>, ApplicationSignInManager>();
             container.RegisterPerWebRequest<IAuthenticationManager>(
@@ -71,28 +87,7 @@ namespace GIS_Chaser.App_Start
 
 
             //App specific container registrations
-            container.RegisterSingle<IPointsStorage, PointsPlumbing>();
 
-
-
-
-            container.RegisterPerWebRequest<
-                   ApplicationUserManager>();
-            
-            container.RegisterPerWebRequest<ApplicationDbContext>(() 
-              => new ApplicationDbContext(
-               "Your constring goes here"));
-            
-            container.RegisterPerWebRequest<IUserStore<
-              ApplicationUser>>(() => 
-                new UserStore<ApplicationUser>(
-                  container.GetInstance<ApplicationDbContext>()));
- 
-            container.RegisterInitializer<ApplicationUserManager>(
-                manager => InitializeUserManager(manager, app));
- 
-            container.RegisterMvcControllers(
-                    Assembly.GetExecutingAssembly());
  
             return container;
         }

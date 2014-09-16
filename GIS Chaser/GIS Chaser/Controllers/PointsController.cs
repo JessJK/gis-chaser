@@ -12,16 +12,18 @@ namespace GIS_Chaser.Controllers
     public class PointsController : ApiController
     {
         private IPointsStorage _pointsStorage { get; set; }
+
         public PointsController(IPointsStorage pointsStorage)
         {
             _pointsStorage = pointsStorage;
         }
 
-        // GET api/PointsController/<the string id of the user>
-        public int Get(string id)
+        //Get
+        [Route("api/points/{customerId}")]
+        public int Get(string customerId)
         {
             PointsModel pointsModel = new PointsModel(_pointsStorage);
-            return pointsModel.GetPoints(id);
+            return pointsModel.GetPoints(customerId);
         }
 
         // GET api/PointsController
