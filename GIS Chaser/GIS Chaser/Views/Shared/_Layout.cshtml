@@ -26,13 +26,16 @@
         </nav>
     </header>
 
-    @RenderBody()
+    <div class="body-content">
+        @RenderBody()
+    </div>
 
     <footer>
         <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
     </footer>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/ClientSideApp")
     @RenderSection("scripts", required: false)
 </body>
 </html>

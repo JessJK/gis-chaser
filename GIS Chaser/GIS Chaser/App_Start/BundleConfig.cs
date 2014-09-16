@@ -18,6 +18,13 @@ namespace GIS_Chaser
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/ClientSideApp").Include(
+                      "~/Scripts/ClientApp/*.js",
+                      "~/Scripts/ClientApp/Controllers/*.js",
+                      "~/Scripts/ClientApp/Models/*.js",
+                      "~/Scripts/ClientApp/Views/*.js",
+                      "~/Scripts/ClientApp/Plumbing/*.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
