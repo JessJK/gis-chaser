@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin;
+﻿using GIS_Chaser.App_Start;
+using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(GIS_Chaser.Startup))]
@@ -8,7 +9,8 @@ namespace GIS_Chaser
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            var container = SimpleInjectorInitializer.Initialize(app);
+            ConfigureAuth(app, container);
         }
     }
 }
