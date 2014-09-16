@@ -9,66 +9,6 @@ namespace GIS_Chaser.Plumbing
   [Serializable]
   [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
   [System.ComponentModel.DataObject]
-  public partial class Points : Entity<int>
-  {
-    #region Fields
-  
-    private int _quantity;
-    [Column("AspNetUsers")]
-    private string _aspNetUsersId;
-
-    #endregion
-    
-    #region Field attribute and view names
-    
-    /// <summary>Identifies the Quantity entity attribute.</summary>
-    public const string QuantityField = "Quantity";
-    /// <summary>Identifies the AspNetUsersId entity attribute.</summary>
-    public const string AspNetUsersIdField = "AspNetUsersId";
-
-
-    #endregion
-    
-    #region Relationships
-
-    [ReverseAssociation("Points")]
-    private readonly EntityHolder<AspNetUser> _aspNetUsers = new EntityHolder<AspNetUser>();
-
-
-    #endregion
-    
-    #region Properties
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public AspNetUser AspNetUsers
-    {
-      get { return Get(_aspNetUsers); }
-      set { Set(_aspNetUsers, value); }
-    }
-
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public int Quantity
-    {
-      get { return Get(ref _quantity, "Quantity"); }
-      set { Set(ref _quantity, value, "Quantity"); }
-    }
-
-    /// <summary>Gets or sets the ID for the <see cref="AspNetUsers" /> property.</summary>
-    [System.Diagnostics.DebuggerNonUserCode]
-    public string AspNetUsersId
-    {
-      get { return Get(ref _aspNetUsersId, "AspNetUsersId"); }
-      set { Set(ref _aspNetUsersId, value, "AspNetUsersId"); }
-    }
-
-    #endregion
-  }
-
-
-  [Serializable]
-  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
-  [System.ComponentModel.DataObject]
   [Table("AspNetUsers")]
   public partial class AspNetUser : Entity<string>
   {
@@ -123,7 +63,9 @@ namespace GIS_Chaser.Plumbing
     #region Relationships
 
     [ReverseAssociation("AspNetUsers")]
-    private readonly EntityCollection<Points> _points = new EntityCollection<Points>();
+    private readonly EntityCollection<Gems> _gems = new EntityCollection<Gems>();
+    [ReverseAssociation("AspNetUsers")]
+    private readonly EntityCollection<ExtendUserTable> _extendUserTables = new EntityCollection<ExtendUserTable>();
 
 
     #endregion
@@ -131,9 +73,15 @@ namespace GIS_Chaser.Plumbing
     #region Properties
 
     [System.Diagnostics.DebuggerNonUserCode]
-    public EntityCollection<Points> Points
+    public EntityCollection<Gems> Gems
     {
-      get { return Get(_points); }
+      get { return Get(_gems); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public EntityCollection<ExtendUserTable> ExtendUserTables
+    {
+      get { return Get(_extendUserTables); }
     }
 
 
@@ -218,6 +166,136 @@ namespace GIS_Chaser.Plumbing
   }
 
 
+  [Serializable]
+  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
+  [System.ComponentModel.DataObject]
+  public partial class Gems : Entity<int>
+  {
+    #region Fields
+  
+    private string _type;
+    private string _pointsValue;
+    [Column("AspNetUsers")]
+    private string _aspNetUsersId;
+
+    #endregion
+    
+    #region Field attribute and view names
+    
+    /// <summary>Identifies the Type entity attribute.</summary>
+    public const string TypeField = "Type";
+    /// <summary>Identifies the PointsValue entity attribute.</summary>
+    public const string PointsValueField = "PointsValue";
+    /// <summary>Identifies the AspNetUsersId entity attribute.</summary>
+    public const string AspNetUsersIdField = "AspNetUsersId";
+
+
+    #endregion
+    
+    #region Relationships
+
+    [ReverseAssociation("Gems")]
+    private readonly EntityHolder<AspNetUser> _aspNetUsers = new EntityHolder<AspNetUser>();
+
+
+    #endregion
+    
+    #region Properties
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public AspNetUser AspNetUsers
+    {
+      get { return Get(_aspNetUsers); }
+      set { Set(_aspNetUsers, value); }
+    }
+
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Type
+    {
+      get { return Get(ref _type, "Type"); }
+      set { Set(ref _type, value, "Type"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string PointsValue
+    {
+      get { return Get(ref _pointsValue, "PointsValue"); }
+      set { Set(ref _pointsValue, value, "PointsValue"); }
+    }
+
+    /// <summary>Gets or sets the ID for the <see cref="AspNetUsers" /> property.</summary>
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string AspNetUsersId
+    {
+      get { return Get(ref _aspNetUsersId, "AspNetUsersId"); }
+      set { Set(ref _aspNetUsersId, value, "AspNetUsersId"); }
+    }
+
+    #endregion
+  }
+
+
+  [Serializable]
+  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
+  [System.ComponentModel.DataObject]
+  public partial class ExtendUserTable : Entity<int>
+  {
+    #region Fields
+  
+    private int _totalPoints;
+    [Column("AspNetUsers")]
+    private string _aspNetUsersId;
+
+    #endregion
+    
+    #region Field attribute and view names
+    
+    /// <summary>Identifies the TotalPoints entity attribute.</summary>
+    public const string TotalPointsField = "TotalPoints";
+    /// <summary>Identifies the AspNetUsersId entity attribute.</summary>
+    public const string AspNetUsersIdField = "AspNetUsersId";
+
+
+    #endregion
+    
+    #region Relationships
+
+    [ReverseAssociation("ExtendUserTables")]
+    private readonly EntityHolder<AspNetUser> _aspNetUsers = new EntityHolder<AspNetUser>();
+
+
+    #endregion
+    
+    #region Properties
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public AspNetUser AspNetUsers
+    {
+      get { return Get(_aspNetUsers); }
+      set { Set(_aspNetUsers, value); }
+    }
+
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public int TotalPoints
+    {
+      get { return Get(ref _totalPoints, "TotalPoints"); }
+      set { Set(ref _totalPoints, value, "TotalPoints"); }
+    }
+
+    /// <summary>Gets or sets the ID for the <see cref="AspNetUsers" /> property.</summary>
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string AspNetUsersId
+    {
+      get { return Get(ref _aspNetUsersId, "AspNetUsersId"); }
+      set { Set(ref _aspNetUsersId, value, "AspNetUsersId"); }
+    }
+
+    #endregion
+  }
+
+
 
 
   /// <summary>
@@ -227,14 +305,19 @@ namespace GIS_Chaser.Plumbing
   public partial class Points_LightSpeedModelUnitOfWork : Mindscape.LightSpeed.UnitOfWork
   {
 
-    public System.Linq.IQueryable<Points> Points
-    {
-      get { return this.Query<Points>(); }
-    }
-    
     public System.Linq.IQueryable<AspNetUser> AspNetUsers
     {
       get { return this.Query<AspNetUser>(); }
+    }
+    
+    public System.Linq.IQueryable<Gems> Gems
+    {
+      get { return this.Query<Gems>(); }
+    }
+    
+    public System.Linq.IQueryable<ExtendUserTable> ExtendUserTables
+    {
+      get { return this.Query<ExtendUserTable>(); }
     }
     
   }

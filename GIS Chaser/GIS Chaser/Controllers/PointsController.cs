@@ -11,9 +11,9 @@ namespace GIS_Chaser.Controllers
 {
     public class PointsController : ApiController
     {
-        private IPointsStorage _pointsStorage { get; set; }
+        private IExtendUserTableStorage _pointsStorage { get; set; }
 
-        public PointsController(IPointsStorage pointsStorage)
+        public PointsController(IExtendUserTableStorage pointsStorage)
         {
             _pointsStorage = pointsStorage;
         }

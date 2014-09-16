@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.1.0.0" name="Points_LightSpeedModel" targetNamespace="GIS_Chaser.Plumbing" databaseProvider="SqlServer2012" connectionString="Data Source=Cheetah\sqlexpress;Initial Catalog=GISChaser;Integrated Security=True" pluralizedInDatabase="false" mediumTrustCompatibility="false" checkForMissingKeyTable="false" xmlns="http://namespaces.mindscape.co.nz/lightspeed">
   <entities>
-    <entity name="Points" identityType="Int32" cacheExpiry="0">
-      <entityProperties>
-        <entityProperty name="Quantity" dataType="Int32" privateSetter="false" />
-      </entityProperties>
-    </entity>
     <entity name="AspNetUser" identityType="String" cacheExpiry="0" tableName="AspNetUsers">
       <entityProperties>
         <entityProperty name="Email" isNullable="true" privateSetter="false">
@@ -31,10 +26,24 @@
         </entityProperty>
       </entityProperties>
       <oneToManyAssociations>
-        <oneToManyAssociation Id="41ae91a8-af08-44b9-9e51-b71b010fc48b" collectionName="Points" backreferenceName="AspNetUsers" isNullable="true" columnName="AspNetUsers">
-          <entityMoniker name="/Points_LightSpeedModel/Points" />
+        <oneToManyAssociation Id="53c2afc3-0e09-4149-abd2-334a5cb15b19" collectionName="Gems" backreferenceName="AspNetUsers" isNullable="true" columnName="AspNetUsers">
+          <entityMoniker name="/Points_LightSpeedModel/Gems" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="feb0bdd7-1a8d-4f98-8bd3-010a15306aae" collectionName="ExtendUserTables" backreferenceName="AspNetUsers" isNullable="false" columnName="AspNetUsers">
+          <entityMoniker name="/Points_LightSpeedModel/ExtendUserTable" />
         </oneToManyAssociation>
       </oneToManyAssociations>
+    </entity>
+    <entity name="Gems" identityType="Int32" cacheExpiry="0">
+      <entityProperties>
+        <entityProperty name="Type" privateSetter="false" />
+        <entityProperty name="PointsValue" privateSetter="false" />
+      </entityProperties>
+    </entity>
+    <entity name="ExtendUserTable" identityType="Int32" cacheExpiry="0">
+      <entityProperties>
+        <entityProperty name="TotalPoints" dataType="Int32" privateSetter="false" />
+      </entityProperties>
     </entity>
   </entities>
 </model>

@@ -8,15 +8,15 @@ using GIS_Chaser.Models;
 
 namespace GIS_Chaser.Services.Interfaces
 {
-    public interface IPointsStorage
+    public interface IExtendUserTableStorage
     {
-        void Persist(Points points);
+        void Persist(ExtendUserTable user);
 
-        Points Retrieve(string id);
+        ExtendUserTable Retrieve(string id);
 
-        void Delete(Points item);
+        void Delete(ExtendUserTable user);
 
-        List<Points> GetAll();
+        List<ExtendUserTable> GetAll();
 
         void Update(int id, int quantity);
     }

@@ -171,7 +171,7 @@ namespace GIS_Chaser.App_Start
 
 
             //App specific container registrations
-            container.RegisterSingle<IPointsStorage, PointsPlumbing>();
+            container.RegisterSingle<IExtendUserTableStorage, ExtendUserTablePlumbing>();
         }
     }
 }

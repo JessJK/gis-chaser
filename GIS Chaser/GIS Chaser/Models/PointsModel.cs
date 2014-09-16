@@ -8,9 +8,9 @@ namespace GIS_Chaser.Models
 {
     public class PointsModel
     {
-        private IPointsStorage _pointsStorage { get; set; }
+        private IExtendUserTableStorage _pointsStorage { get; set; }
 
-        public PointsModel(IPointsStorage pointsStoragestorage)
+        public PointsModel(IExtendUserTableStorage pointsStoragestorage)
         {
             _pointsStorage = pointsStoragestorage;
         }
@@ -18,7 +18,7 @@ namespace GIS_Chaser.Models
         public int GetPoints(string id)
         {
             var tempPoints = _pointsStorage.Retrieve(id);
-            return tempPoints.Quantity;
+            return tempPoints.TotalPoints;
         }
     }
 }

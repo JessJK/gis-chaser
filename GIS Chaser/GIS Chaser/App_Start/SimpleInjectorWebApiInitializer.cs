@@ -33,7 +33,7 @@ namespace GIS_Chaser.App_Start
 
             // For instance:
             // container.RegisterWebApiRequest<IUserRepository, SqlUserRepository>();
-            container.RegisterSingle<IPointsStorage, PointsPlumbing>();
+            container.RegisterSingle<IExtendUserTableStorage, ExtendUserTablePlumbing>();
         }
     }
 }

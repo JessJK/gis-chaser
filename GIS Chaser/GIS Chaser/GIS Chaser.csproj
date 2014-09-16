@@ -235,10 +235,10 @@
       <DependentUpon>Points_LightSpeedModel.lsmodel</DependentUpon>
     </Compile>
     <Compile Include="Plumbing\Repository.cs" />
-    <Compile Include="Plumbing\TablePlumbings\PointsPlumbing.cs" />
+    <Compile Include="Plumbing\TablePlumbings\ExtendUserTablePlumbing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Scripts\ClientApp\Models\Points.js" />
-    <Compile Include="Services\Interfaces\IPointsStorage.cs" />
+    <Compile Include="Services\Interfaces\IExtendUserTableStorage.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

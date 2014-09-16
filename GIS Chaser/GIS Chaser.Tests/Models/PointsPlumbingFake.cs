@@ -8,28 +8,29 @@ using GIS_Chaser.Services.Interfaces;
 
 namespace GIS_Chaser.Tests.Models
 {
-    class PointsPlumbingFake : IPointsStorage
+    class PointsPlumbingFake : IExtendUserTableStorage
     {
 
-        public void Persist(Plumbing.Points points)
+        public void Persist(Plumbing.ExtendUserTable user)
         {
             throw new NotImplementedException();
         }
 
-        public Plumbing.Points Retrieve(string id)
+        Plumbing.ExtendUserTable IExtendUserTableStorage.Retrieve(string id)
         {
-            return new Points(){AspNetUsersId = "user",Quantity = 5};
+            return new ExtendUserTable() { AspNetUsersId = "user", TotalPoints = 5 };
         }
 
-        public void Delete(Plumbing.Points item)
+        public void Delete(Plumbing.ExtendUserTable user)
         {
             throw new NotImplementedException();
         }
 
-        public List<Plumbing.Points> GetAll()
+        List<Plumbing.ExtendUserTable> IExtendUserTableStorage.GetAll()
         {
             throw new NotImplementedException();
         }
+
 
         public void Update(int id, int quantity)
         {
