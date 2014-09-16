@@ -40,6 +40,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mindscape.LightSpeed">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Mindscape\LightSpeed\Bin\Mindscape.LightSpeed.dll</HintPath>
+    </Reference>
+    <Reference Include="Mindscape.LightSpeed.Linq">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Mindscape\LightSpeed\Bin\Mindscape.LightSpeed.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -174,6 +180,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LightSpeedModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LightSpeedModel1.lsmodel</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -189,6 +200,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="LightSpeedModel1.lsmodel">
+      <Generator>LightSpeedModelGenerator</Generator>
+      <LastGenOutput>LightSpeedModel1.cs</LastGenOutput>
+    </Content>
+    <Content Include="LightSpeedModel1.lsmodel.diagram">
+      <DependentUpon>LightSpeedModel1.lsmodel</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
