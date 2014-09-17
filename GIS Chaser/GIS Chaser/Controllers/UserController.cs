@@ -9,20 +9,20 @@ using GIS_Chaser.Services.Interfaces;
 
 namespace GIS_Chaser.Controllers
 {
-    public class PointsController : ApiController
+    public class UserController : ApiController
     {
-        private IExtendUserTableStorage _pointsStorage { get; set; }
+        private IExtendUserTableStorage _userStorage { get; set; }
 
-        public PointsController(IExtendUserTableStorage pointsStorage)
+        public UserController(IExtendUserTableStorage userStorage)
         {
-            _pointsStorage = pointsStorage;
+            _userStorage = userStorage;
         }
 
         //Get
         [Route("api/points/{customerId}")]
         public int Get(string customerId)
         {
-            PointsModel pointsModel = new PointsModel(_pointsStorage);
+            UserModel pointsModel = new UserModel(_userStorage);
             return pointsModel.GetPoints(customerId);
         }
 

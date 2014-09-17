@@ -34,6 +34,7 @@ namespace GIS_Chaser.App_Start
             // For instance:
             // container.RegisterWebApiRequest<IUserRepository, SqlUserRepository>();
             container.RegisterSingle<IExtendUserTableStorage, ExtendUserTablePlumbing>();
+            container.RegisterSingle<IGemStorage, GemsPlumbing>();
         }
     }
 }

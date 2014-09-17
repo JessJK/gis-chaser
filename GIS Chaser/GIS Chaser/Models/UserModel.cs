@@ -6,11 +6,11 @@ using GIS_Chaser.Services.Interfaces;
 
 namespace GIS_Chaser.Models
 {
-    public class PointsModel
+    public class UserModel
     {
         private IExtendUserTableStorage _pointsStorage { get; set; }
 
-        public PointsModel(IExtendUserTableStorage pointsStoragestorage)
+        public UserModel(IExtendUserTableStorage pointsStoragestorage)
         {
             _pointsStorage = pointsStoragestorage;
         }

@@ -216,19 +216,21 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GemController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PointsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GemModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\PointsModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Plumbing\Configuration.cs" />
-    <Compile Include="Plumbing\Interfaces\IConfiguration.cs" />
-    <Compile Include="Plumbing\Interfaces\IRepository.cs" />
+    <Compile Include="Plumbing\ConfigInterfaces\IConfiguration.cs" />
+    <Compile Include="Plumbing\ConfigInterfaces\IRepository.cs" />
     <Compile Include="Plumbing\Points_LightSpeedModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,9 +238,11 @@
     </Compile>
     <Compile Include="Plumbing\Repository.cs" />
     <Compile Include="Plumbing\TablePlumbings\ExtendUserTablePlumbing.cs" />
+    <Compile Include="Plumbing\TablePlumbings\GemsPlumbing.cs" />
+    <Compile Include="Plumbing\TableInterfaces\IGemStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Scripts\ClientApp\Models\Points.js" />
-    <Compile Include="Services\Interfaces\IExtendUserTableStorage.cs" />
+    <Compile Include="Plumbing\TableInterfaces\IExtendUserTableStorage.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
