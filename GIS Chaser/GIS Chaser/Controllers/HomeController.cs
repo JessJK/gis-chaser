@@ -26,5 +26,13 @@ namespace GIS_Chaser.Controllers
 
             return View();
         }
+
+        public ActionResult ViewBrowser()
+        {
+            ViewBag.Message = "Holy Hell!";
+
+            return View();
+        }
+
     }
 }
