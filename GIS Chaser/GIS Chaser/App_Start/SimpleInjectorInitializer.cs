@@ -3,6 +3,7 @@ using System.Web;
 using GIS_Chaser;
 using GIS_Chaser.Models;
 using GIS_Chaser.Plumbing.TablePlumbings;
+using GIS_Chaser.ScheduledTasks;
 using GIS_Chaser.Services.Interfaces;
 using System.Reflection;
 using System.Web.Mvc;
@@ -40,6 +41,7 @@ namespace GIS_Chaser.App_Start
         public static Container GetInitializeContainer(
                   IAppBuilder app)
         {
+            #region Account management Fix for Simple Injector
             var container = new Container();
  
             container.RegisterSingle<IAppBuilder>(app);
@@ -84,11 +86,18 @@ namespace GIS_Chaser.App_Start
 
                     return context.Authentication;
                 });
+            #endregion
+            
+            #region App specific container registrations
+            
 
 
-            //App specific container registrations
 
- 
+            
+
+            #endregion
+
+            
             return container;
         }
 
@@ -121,57 +130,6 @@ namespace GIS_Chaser.App_Start
                  new DataProtectorTokenProvider<ApplicationUser>(
                   dataProtectionProvider.Create("ASP.NET Identity"));
             }
-        }
-    
-
-
-
-        //public static class SimpleInjectorInitializer
-        //{
-        //    /// <summary>Initialize the container and register it as MVC3 Dependency Resolver.</summary>
-        //    public static void Initialize()
-        //    {
-        //        // Did you know the container can diagnose your configuration? Go to: https://bit.ly/YE8OJj.
-        //        var container = new Container();
-
-        //        InitializeContainer(container);
-
-        //        container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
-
-        //        container.Verify();
-
-        //        DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
-        //    }
-
-        private static void InitializeContainer(Container container)
-        {
-            //Account container registrations
-            container.RegisterPerWebRequest<SignInManager<ApplicationUser, string>, ApplicationSignInManager>();
-            container.RegisterPerWebRequest<IAuthenticationManager>(
-                () =>
-                {
-                    IOwinContext context = null;
-                    try
-                    {
-                        context = HttpContext.Current.GetOwinContext();
-                    }
-                    catch (InvalidOperationException)
-                    {
-                        // Please note that the `IsVerifying()` method is 
-                        // declared in SimpleInjector.Advanced. 
-                        if (container.IsVerifying())
-                        {
-                            return new FakeAuthenticationManager();
-                        }
-                        throw;
-                    }
-
-                    return context.Authentication;
-                });
-
-
-            //App specific container registrations
-            container.RegisterSingle<IExtendUserTableStorage, ExtendUserTablePlumbing>();
         }
     }
 }
