@@ -6,16 +6,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace GIS_Chaser.Tests.Controllers
 {
     [TestClass]
-    public class PointsControllerTest
+    public class UserControllerTest
     {
         [TestMethod]
         public void Test_that_Get_Points_by_given_user_id_is_as_expected()
         {
             //Arrange
-            UserController pointsController = new UserController(new PointsPlumbingFake());
+            UserController userController = new UserController(new PointsPlumbingFake());
 
             //Act
-            int actual = pointsController.Get("user");
+            int actual = userController.Get("user");
 
             //Assert
             Assert.AreEqual(actual, 5);

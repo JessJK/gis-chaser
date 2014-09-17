@@ -232,8 +232,13 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GemModel.cs" />
+    <Compile Include="Models\TerritoryModel.cs" />
+    <Compile Include="ScheduledTasks\GemScheduleAdd.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="ScheduledTasks\Interfaces\IGemScheduleAdd.cs" />
+    <Compile Include="ScheduledTasks\Interfaces\ITerritorySchedulePoints.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="ScheduledTasks\TerritorySchedulePoints.cs" />
     <Compile Include="ScheduledTasks\AppendToFile.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Plumbing\Configuration.cs" />
@@ -372,7 +377,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ScheduledTasks\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

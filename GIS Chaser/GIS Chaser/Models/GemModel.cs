@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using GIS_Chaser.Models.Interfaces;
+using GIS_Chaser.ScheduledTasks.Interfaces;
 using GIS_Chaser.Services.Interfaces;
 
 namespace GIS_Chaser.Models
 {
-    public class GemModel : IGemModel
+    public class GemModel
     {
-        private IGemStorage _pointsStorage { get; set; }
+        private IGemStorage _gemStorage { get; set; }
+        private IGemScheduleAdd _gemAdd { get; set; }
 
-        public GemModel(IGemStorage pointsStoragestorage)
+        public GemModel(IGemStorage gemStorage, IGemScheduleAdd gemAdd)
         {
-            _pointsStorage = pointsStoragestorage;
+            _gemStorage = gemStorage;
+            _gemAdd = gemAdd;
         }
 
         public int GetGems(string id)
         {
-            var tempPoints = _pointsStorage.GetAll();
-            return tempPoints.Count;
+            return _gemStorage.GetAll().Count;
         }
+
+
     }
 }

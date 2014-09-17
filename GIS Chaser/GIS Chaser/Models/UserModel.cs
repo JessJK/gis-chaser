@@ -8,16 +8,16 @@ namespace GIS_Chaser.Models
 {
     public class UserModel
     {
-        private IExtendUserTableStorage _pointsStorage { get; set; }
+        private IExtendUserTableStorage _userStorage { get; set; }
 
-        public UserModel(IExtendUserTableStorage pointsStoragestorage)
+        public UserModel(IExtendUserTableStorage userStorage)
         {
-            _pointsStorage = pointsStoragestorage;
+            _userStorage = userStorage;
         }
 
         public int GetPoints(string id)
         {
-            var tempPoints = _pointsStorage.Retrieve(id);
+            var tempPoints = _userStorage.Retrieve(id);
             return tempPoints.TotalPoints;
         }
     }
