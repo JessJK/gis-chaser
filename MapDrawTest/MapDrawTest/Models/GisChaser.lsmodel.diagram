@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<minimalLanguageDiagram dslVersion="1.1.0.0" absoluteBounds="0, 0, 11, 8.5" name="GisChaser">
+  <modelMoniker name="/GisChaser" />
+  <nestedChildShapes>
+    <entityShape Id="02075321-51a2-4ba4-955f-2b5690e23e4b" absoluteBounds="4.375, 1.625, 1.5, 0.89460286458333371">
+      <entityMoniker name="/GisChaser/CoordinateDatum" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6cef49ea-019b-4a7b-8375-24ac1986196b" absoluteBounds="4.39, 2.035, 1.4700000000000002, 0.38460286458333337" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+  </nestedChildShapes>
+</minimalLanguageDiagram>

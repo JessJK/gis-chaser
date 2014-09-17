@@ -40,9 +40,9 @@
 
 function HexMaker(latitude, longitude, size) {
 
-    var width = (size * 2) * (1 / Math.sin(latitude)*1.2);
-    console.log(Math.sin(latitude));
-    var height = Math.sqrt(3) / 2 * width;
+    var width = (size * 2) * (1 / Math.sin(latitude) * 0.8);
+    console.log(Math.cos(latitude));
+    var height = Math.sqrt(3) / 2.4 * width;
     
 
     var hexArray = [
@@ -54,6 +54,8 @@ function HexMaker(latitude, longitude, size) {
         { lat: latitude - (1/2 * height), lng: longitude - (1/4 * width) }, //6
         { lat: latitude,  lng: longitude} //7
     ];
+
+    $.post("/api/hexcoords", JSON.stringify(hexArray));
     return hexArray;
 }
 
