@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using GIS_Chaser.Models.Interfaces;
 using GIS_Chaser.Services.Interfaces;
 
 namespace GIS_Chaser.Models
 {
-    public class GemModel
+    public class GemModel : IGemModel
     {
         private IGemStorage _pointsStorage { get; set; }
 
