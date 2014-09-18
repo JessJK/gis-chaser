@@ -10,9 +10,9 @@
     mapOptions);
 
     
-    var hex = new Hex(data.coords.latitude, data.coords.longitude, 0.001);
+    var hex = new HexGrid(data.coords.latitude, data.coords.longitude, 0.001);
 
-    var properHex = hex.GetHexPoly();
+    var properHex = hex.GetHexes();
 
     console.table(properHex);
     var myCoordinates = [];
@@ -87,6 +87,66 @@ Hex.prototype.CornerFromCentre = function() {
 
 }
 
+function HexGrid(latitude, longitude, size) {
+
+    this.centreRadiusLatitude = latitude;
+    this.centreRadiusLongitude = longitude;
+
+    this.offsetLatitude = latitude;
+    this.offsetLongitude = longitude;
+    this.width = (size * 2) * (1 / Math.sin(latitude) * 0.8);
+    this.height = Math.sqrt(3) / 2.4 * this.width;
+
+
+
+    //given hex get out a hexpoly array which is hex maker
+
+}
+
+HexGrid.prototype.CornerFromCentre = function () {
+
+    //find corner point, half height and -1/4 width.
+    this.offsetLatitude = this.centreRadiusLatitude + (1 / 2 * this.height);
+    this.offsetLongitude = this.centreRadiusLongitude - (1 / 4 * this.width);
+
+
+
+}
+
+HexGrid.prototype.GetHexes = function () {
+
+    var polys = [];
+    var gridPoints = this.GetGridPoints(10, 10);
+    //var allGridPoints = gridPoints.concat(GetGridPoints)
+    $.each(gridPoints, function(index, value) {
+
+        var hex = new Hex(value.lat, value.lng, this.size);
+        polys.push(hex.GetHexPoly());
+    });
+
+    return polys;
+}
+
+
+HexGrid.prototype.GetGridPoints = function(n, m) {
+
+    var gridPoints = [];
+
+    for (var i = 1; i = n; i++) {
+
+        console.log(i);
+        var pointlat = this.offsetLatitude + (1.5 * this.width * i);
+        //lat + 1.5 width * i
+        for (var j = 1; j = m; j++) {
+
+            var pointlng = this.offsetLongitude - (1 * this.height * j);
+            gridPoints.push({lat: pointlat, lng: pointlng});
+
+        }
+    }
+    return gridPoints;
+    
+}
 
 
 function setUpLocation() {
