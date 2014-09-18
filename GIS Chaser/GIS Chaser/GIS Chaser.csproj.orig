@@ -47,20 +47,14 @@
       <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+<<<<<<< HEAD
     <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-    <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-    </Reference>
-
-    <Reference Include="Mindscape.LightSpeed">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Mindscape\LightSpeed\Bin\Mindscape.LightSpeed.dll</HintPath>
-    </Reference>
-    <Reference Include="Mindscape.LightSpeed.Linq">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Mindscape\LightSpeed\Bin\Mindscape.LightSpeed.Linq.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -90,12 +84,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
     </Reference>
+=======
+>>>>>>> master
     <Reference Include="Mindscape.LightSpeed">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Mindscape\LightSpeed\Bin\Mindscape.LightSpeed.dll</HintPath>
     </Reference>
     <Reference Include="Mindscape.LightSpeed.Linq">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Mindscape\LightSpeed\Bin\Mindscape.LightSpeed.Linq.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -123,6 +120,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SimpleInjector.Integration.WebApi.2.5.2\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
     </Reference>
+=======
+>>>>>>> master
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -312,15 +311,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+<<<<<<< HEAD
     <Content Include="Content\pure-release-0.5.0\bower.json" />
     <Content Include="Content\pure-release-0.5.0\HISTORY.md" />
-    <Content Include="LightSpeedModel1.lsmodel">
-      <Generator>LightSpeedModelGenerator</Generator>
-      <LastGenOutput>LightSpeedModel1.cs</LastGenOutput>
-    </Content>
-    <Content Include="LightSpeedModel1.lsmodel.diagram">
-      <DependentUpon>LightSpeedModel1.lsmodel</DependentUpon>
-    </Content>
     <Content Include="Content\pure-release-0.5.0\LICENSE.md" />
     <Content Include="Content\pure-release-0.5.0\README.md" />
     <Content Include="Plumbing\Points_LightSpeedModel.lsmodel">
@@ -332,6 +325,17 @@
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
+=======
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="LightSpeedModel1.lsmodel">
+      <Generator>LightSpeedModelGenerator</Generator>
+      <LastGenOutput>LightSpeedModel1.cs</LastGenOutput>
+    </Content>
+    <Content Include="LightSpeedModel1.lsmodel.diagram">
+      <DependentUpon>LightSpeedModel1.lsmodel</DependentUpon>
+    </Content>
+>>>>>>> master
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\ClientApp\Application.js" />
