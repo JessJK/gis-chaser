@@ -9,7 +9,10 @@
     var map = new google.maps.Map(document.getElementById('map-canvas'),
     mapOptions);
 
-    var properHex = HexMaker(data.coords.latitude,  data.coords.longitude , 0.001);
+    
+    var hex = new Hex(data.coords.latitude, data.coords.longitude, 0.001);
+
+    var properHex = hex.GetHexPoly();
     var myCoordinates = [];
 
     $.each(properHex, function (index, value) {
@@ -38,11 +41,39 @@
 
 }
 
+function Hex(latitude, longitude, size) {
+
+    var centreRadiusLatitude = latitude;
+    var centreRadiusLongitude = longitude;
+    var width = (size * 2) * (1 / Math.sin(latitude) * 0.8);
+    var height = Math.sqrt(3) / 2.4 * width;
+    
+
+
+    //given hex get out a hexpoly array which is hex maker
+
+}
+
+Hex.prototype.GetHexPoly = function() {
+    
+    //from here we are calling functions hex, hexfromradiuspoint, cornerfromcentre, hexmaker
+
+}
+
+function HexFromRadiusPoint(latitude, longitude, size) {
+   var cornercoords = CornerFromCentre();
+    //given corner from centre get hexpoly from hex maker
+
+}
+
+function CornerFromCentre(latitude, longitude, size) {
+    
+    //find corner point, half height and -1/4 width.
+}
+
 function HexMaker(latitude, longitude, size) {
 
-    var width = (size * 2) * (1 / Math.sin(latitude) * 0.8);
-    console.log(Math.cos(latitude));
-    var height = Math.sqrt(3) / 2.4 * width;
+  
     
 
     var hexArray = [
@@ -55,7 +86,9 @@ function HexMaker(latitude, longitude, size) {
         { lat: latitude,  lng: longitude} //7
     ];
 
-    $.post("/api/hexcoords", JSON.stringify(hexArray));
+
+
+    //$.post("/api/hexcoords", JSON.stringify(hexArray));
     return hexArray;
 }
 

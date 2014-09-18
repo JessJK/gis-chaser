@@ -29,9 +29,9 @@ namespace MapDrawTest.Controllers
         public void Post([FromBody]IEnumerable<HexCoord> coords)
         {
             Console.WriteLine(coords);
-            using (LightSpeedContext<GisChaserUnitOfWork> )
+            using (var uow = DataAccessHelper.GetUnitOfWork())
             {
-                
+                //uow.Add();
             }
         }
 
