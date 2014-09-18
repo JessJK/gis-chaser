@@ -21,12 +21,6 @@ namespace GIS_Chaser.Models
                 .WithSimpleSchedule(x => x
                 .WithIntervalInSeconds(10)
                 .RepeatForever())
-                //.WithDailyTimeIntervalSchedule
-                //  (s =>
-                //     s.WithIntervalInSeconds(5)
-                //    .OnEveryDay()
-                //    .StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0, 0))
-                //  )
                 .Build();
 
             ITrigger trigger2 = TriggerBuilder.Create()

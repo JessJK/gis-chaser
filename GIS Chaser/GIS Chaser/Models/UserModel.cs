@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using GIS_Chaser.Services.Interfaces;
+using GIS_Chaser.Plumbing.TableInterfaces;
 
 namespace GIS_Chaser.Models
 {

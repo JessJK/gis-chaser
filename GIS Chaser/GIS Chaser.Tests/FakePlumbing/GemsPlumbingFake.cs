@@ -1,27 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using GIS_Chaser.Models;
+using GIS_Chaser.Plumbing;
 using GIS_Chaser.Plumbing.TableInterfaces;
 
-namespace GIS_Chaser.Plumbing.TablePlumbings
+namespace GIS_Chaser.Tests.FakePlumbing
 
 {
-    public class GemsPlumbing : IGemStorage
+    public class GemsPlumbingFake : IGemStorage
     {
+
+        public Gems TempGem { get; set; }
+
         public void Persist(Gems gem)
         {
-            using (Repository<Gems> dataAccessHelper = new Repository<Gems>(new Configuration()))
-            {
-                dataAccessHelper.Add(gem);
-                dataAccessHelper.SaveChanges();
-            }
+            TempGem = gem;
         }
 
         public Gems Retrieve(string id)
         {
-            throw new NotImplementedException();
+            return TempGem;
         }
 
         public void Delete(Gems gem)

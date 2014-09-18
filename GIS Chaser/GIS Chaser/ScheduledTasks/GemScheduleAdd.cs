@@ -1,16 +1,18 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using GIS_Chaser.ScheduledTasks.Interfaces;
+﻿using System.Diagnostics;
+using GIS_Chaser.Models;
+using GIS_Chaser.Plumbing.TableInterfaces;
+using GIS_Chaser.Plumbing.TablePlumbings;
 using Quartz;
 
 namespace GIS_Chaser.ScheduledTasks
 {
-    public class GemScheduleAdd : IGemScheduleAdd, IJob
+    public class GemScheduleAdd : IJob
     {
+
         public void Execute(IJobExecutionContext context)
         {
-            Debug.Write("A gem is created");
+            GemModel gemModel = new GemModel(new GemsPlumbing());
+            gemModel.AutoAddGem();
         }
     }
 }

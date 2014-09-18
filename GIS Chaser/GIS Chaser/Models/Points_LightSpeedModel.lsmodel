@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.1.0.0" name="Points_LightSpeedModel" targetNamespace="GIS_Chaser.Plumbing" databaseProvider="SqlServer2012" connectionString="Data Source=Cheetah\sqlexpress;Initial Catalog=GISChaser;Integrated Security=True" pluralizedInDatabase="false" mediumTrustCompatibility="false" checkForMissingKeyTable="false" xmlns="http://namespaces.mindscape.co.nz/lightspeed">
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.1.0.0" name="Points_LightSpeedModel" targetNamespace="GIS_Chaser.Models" databaseProvider="SqlServer2012" connectionString="Data Source=Cheetah\sqlexpress;Initial Catalog=GISChaser;Integrated Security=True" pluralizedInDatabase="false" mediumTrustCompatibility="false" checkForMissingKeyTable="false" xmlns="http://namespaces.mindscape.co.nz/lightspeed">
   <entities>
     <entity name="AspNetUser" identityType="String" cacheExpiry="0" tableName="AspNetUsers">
       <entityProperties>
@@ -26,20 +26,30 @@
         </entityProperty>
       </entityProperties>
       <oneToManyAssociations>
-        <oneToManyAssociation Id="53c2afc3-0e09-4149-abd2-334a5cb15b19" collectionName="Gems" backreferenceName="AspNetUsers" isNullable="true" columnName="AspNetUsers">
-          <entityMoniker name="/Points_LightSpeedModel/Gems" />
-        </oneToManyAssociation>
         <oneToManyAssociation Id="feb0bdd7-1a8d-4f98-8bd3-010a15306aae" collectionName="ExtendUserTables" backreferenceName="AspNetUsers" isNullable="false" columnName="AspNetUsers">
           <entityMoniker name="/Points_LightSpeedModel/ExtendUserTable" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="1095ce69-4c5a-44a9-956e-02c9dfc7c7b7" collectionName="Gems" backreferenceName="AspNetUsers" isNullable="false">
+          <entityMoniker name="/Points_LightSpeedModel/Gems" />
         </oneToManyAssociation>
       </oneToManyAssociations>
     </entity>
     <entity name="Gems" identityType="Int32" cacheExpiry="0">
       <entityProperties>
-        <entityProperty name="Type" privateSetter="false" />
-        <entityProperty name="PointsValue" privateSetter="false" />
-        <entityProperty name="lat" privateSetter="false" />
-        <entityProperty name="lng" privateSetter="false" />
+        <entityProperty name="Type" dataType="Int32" privateSetter="false" />
+        <entityProperty name="PointsValue" dataType="Int32" privateSetter="false" />
+        <entityProperty name="Latitude" dataType="Double" privateSetter="false">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="10" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Longitude" dataType="Double" privateSetter="false">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="10" />
+          </validations>
+        </entityProperty>
       </entityProperties>
     </entity>
     <entity name="ExtendUserTable" identityType="Int32" cacheExpiry="0">

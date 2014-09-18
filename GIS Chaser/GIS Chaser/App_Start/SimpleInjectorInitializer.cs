@@ -2,9 +2,9 @@ using System;
 using System.Web;
 using GIS_Chaser;
 using GIS_Chaser.Models;
+using GIS_Chaser.Plumbing.TableInterfaces;
 using GIS_Chaser.Plumbing.TablePlumbings;
 using GIS_Chaser.ScheduledTasks;
-using GIS_Chaser.Services.Interfaces;
 using System.Reflection;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -89,7 +89,7 @@ namespace GIS_Chaser.App_Start
             #endregion
             
             #region App specific container registrations
-            
+            container.Register<IGemStorage, GemsPlumbing>();
 
 
 

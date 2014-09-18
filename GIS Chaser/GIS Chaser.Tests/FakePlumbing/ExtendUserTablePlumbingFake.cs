@@ -1,36 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GIS_Chaser.Models;
 using GIS_Chaser.Plumbing;
-using GIS_Chaser.Services.Interfaces;
+using GIS_Chaser.Plumbing.TableInterfaces;
 
-namespace GIS_Chaser.Tests.Models
+namespace GIS_Chaser.Tests.FakePlumbing
 {
-    class PointsPlumbingFake : IExtendUserTableStorage
+    class ExtendUserTablePlumbingFake : IExtendUserTableStorage
     {
-
-        public void Persist(Plumbing.ExtendUserTable user)
+        public void Persist(ExtendUserTable user)
         {
             throw new NotImplementedException();
         }
 
-        Plumbing.ExtendUserTable IExtendUserTableStorage.Retrieve(string id)
+        public ExtendUserTable Retrieve(string id)
         {
             return new ExtendUserTable() { AspNetUsersId = "user", TotalPoints = 5 };
         }
 
-        public void Delete(Plumbing.ExtendUserTable user)
+        public void Delete(ExtendUserTable user)
         {
             throw new NotImplementedException();
         }
 
-        List<Plumbing.ExtendUserTable> IExtendUserTableStorage.GetAll()
+        public List<ExtendUserTable> GetAll()
         {
             throw new NotImplementedException();
         }
-
 
         public void Update(int id, int quantity)
         {

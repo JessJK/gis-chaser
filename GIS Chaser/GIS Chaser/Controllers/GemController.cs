@@ -5,27 +5,24 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using GIS_Chaser.Models;
-using GIS_Chaser.ScheduledTasks.Interfaces;
-using GIS_Chaser.Services.Interfaces;
+using GIS_Chaser.Plumbing.TableInterfaces;
 
 namespace GIS_Chaser.Controllers
 {
     public class GemController : ApiController
     {
         private IGemStorage _gemStorage { get; set; }
-        private IGemScheduleAdd _gemAdd { get; set; }
 
-        public GemController(IGemStorage gemStorage, IGemScheduleAdd gemAdd)
+        public GemController(IGemStorage gemStorage)
         {
             _gemStorage = gemStorage;
-            _gemAdd = gemAdd;
         }
 
         [Route("api/gems/{customerId}")]
-        public int Get(string customerId)
+        public List<Gems> Get(string customerId)
         {
-            GemModel gemModel = new GemModel(_gemStorage, _gemAdd);
-            return gemModel.GetGems(customerId);
+            GemModel gemModel = new GemModel(_gemStorage);
+            return gemModel.GetGemsForUser(customerId);
         }
 
         // GET: api/Gem
