@@ -10,6 +10,8 @@ namespace GIS_Chaser.Controllers
     {
         public ActionResult Index()
         {
+
+            
             return View();
         }
 

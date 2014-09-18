@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace GIS_Chaser
 {
@@ -19,17 +18,26 @@ namespace GIS_Chaser
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/ClientSideApp").Include(
+                      "~/Scripts/ClientApp/*.js",
+                      "~/Scripts/ClientApp/Controllers/*.js",
+                      "~/Scripts/ClientApp/Models/*.js",
+                      "~/Scripts/ClientApp/Views/*.js",
+                      "~/Scripts/ClientApp/Plumbing/*.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/pure-release-0.5.0/pure-min.css",
+                      "~/Content/pure-release-0.5.0/grids-responsive-min.css",
+                      "~/Content/extra.css",
                       "~/Content/site.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
