@@ -123,12 +123,12 @@ HexGrid.prototype.GetHexes = function () {
     
     var polys = [];
 
-
+    var sizelocal = this.size;
     var gridPoints = this.GetGridPoints(10, 10);
     //var allGridPoints = gridPoints.concat(GetGridPoints)
     $.each(gridPoints, function(index, value) {
 
-        var hex = new Hex(value.lat, value.lng, this.size);
+        var hex = new Hex(value.lat, value.lng, sizelocal);
         polys.push(hex.GetHexPoly());
     });
 
