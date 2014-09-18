@@ -128,6 +128,7 @@
   <ItemGroup>
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\SimpleInjectorWebApiInitializer.cs" />
+    <Compile Include="Controllers\Class1.cs" />
     <Compile Include="Controllers\UserControllerTest.cs" />
     <Compile Include="Models\PointsPlumbingFake.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
