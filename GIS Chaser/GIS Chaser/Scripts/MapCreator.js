@@ -143,11 +143,11 @@ HexGrid.prototype.GetGridPoints = function(n, m) {
     for (var i = 1; i < n; i++) {
 
         
-        var pointlat = this.offsetLatitude + (1.5 * this.height * i);
+        var pointlat = this.offsetLatitude + (1 * this.height * i);
         //lat + 1.5 width * i
         for (var j = 1; j < m; j++) {
 
-            var pointlng = this.offsetLongitude - (1 * this.width * j);
+            var pointlng = this.offsetLongitude - (1.5 * this.width * j);
             gridPoints.push({lat: pointlat, lng: pointlng});
 
         }
