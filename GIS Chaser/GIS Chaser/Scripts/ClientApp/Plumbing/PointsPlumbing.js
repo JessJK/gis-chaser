@@ -9,39 +9,21 @@
 //});
 
 var PointsPlumbing = {
-    GetAll: function() {
-        $.ajax({
-            url: '/api/customers',
-            contentType: "application/json; charset=utf-8",
-            success: PointsModel.gotData
-        });
-
-        // Dont forget about .done!
-        //    .done(function (data) {
-        //    self.DisplayCustomers(data);
-        //});
-
-    },
     Get: function(id) {
         $.ajax({
             Id: id,
-            url: 'api/points/{Id}',
+            url: 'api/user/{Id}',
             contentType: "application/json; charset=utf-8",
-            success: PointsModel.gotData
+            success: UsersModel.gotData
         });
     },
-    //GetNotes: function (id) {
-    //$.ajax({
-    //    url: '/api/customers/'+id+'/notes',
-    //    contentType: "application/json; charset=utf-8",
-    //    success: NotesModel.gotData
-    //});
+
     Delete: function(id) {
         $.ajax({
             Id: id,
-            url: '/api/points/{Id}',
+            url: 'api/user/{Id}',
             contentType: "application/json; charset=utf-8",
-            success: PointsModel.gotData
+            success: UsersModel.gotData
         });
     }
 }

@@ -8,13 +8,13 @@
         <elementListCompartment Id="76314c90-619b-4185-b51e-0ad047074ee0" absoluteBounds="2.7649999999999997, 2.66, 1.4700000000000002, 2.115315755208333" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
-    <entityShape Id="2130835d-416f-47fd-8331-7913a865ad78" absoluteBounds="6.75, 3.625, 1.5, 0.89460286458333282">
+    <entityShape Id="2130835d-416f-47fd-8331-7913a865ad78" absoluteBounds="6.75, 3.625, 1.5, 1.2792057291666668">
       <entityMoniker name="/Points_LightSpeedModel/Gems" />
       <nestedChildShapes>
-        <elementListCompartment Id="e9a16b52-4dc1-42f5-b58c-1cff8aeea72f" absoluteBounds="6.765, 4.035, 1.4700000000000002, 0.38460286458333331" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e9a16b52-4dc1-42f5-b58c-1cff8aeea72f" absoluteBounds="6.765, 4.035, 1.4700000000000002, 0.76920572916666663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
-    <oneToManyAssociationConnector edgePoints="[(4.25 : 4.07230143229167); (6.75 : 4.07230143229167)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <oneToManyAssociationConnector edgePoints="[(4.25 : 4.25015787760417); (6.75 : 4.25015787760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <oneToManyAssociationMoniker Id="53c2afc3-0e09-4149-abd2-334a5cb15b19" />
       <relativeChildShapes />
       <nodes>
@@ -28,7 +28,7 @@
         <elementListCompartment Id="5d79fa34-6431-4f9f-88b4-56f1f0a98943" absoluteBounds="6.765, 2.785, 1.4700000000000002, 0.19230143229166666" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
-    <oneToManyAssociationConnector edgePoints="[(4.25 : 2.72615071614583); (6.75 : 2.72615071614583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <oneToManyAssociationConnector edgePoints="[(4.25 : 2.72615071614583); (6.75 : 2.72615071614583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <oneToManyAssociationMoniker Id="feb0bdd7-1a8d-4f98-8bd3-010a15306aae" />
       <relativeChildShapes />
       <nodes>

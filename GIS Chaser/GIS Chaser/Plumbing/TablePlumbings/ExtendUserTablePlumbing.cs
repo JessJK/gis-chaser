@@ -44,12 +44,12 @@ namespace GIS_Chaser.Plumbing.TablePlumbings
 
         public void Update(int id, int quantity)
         {
-            //using (Repository<ExtendUserTable> dataAccessHelper = new Repository<ExtendUserTable>(new Configuration()))
-            //{
-            //    var tempo = Convert.ToInt32(dataAccessHelper.FindById(id).Quantity) - quantity;
-            //    dataAccessHelper.FindById(id).Quantity = tempo;
-            //    dataAccessHelper.SaveChanges();
-            //}
+            using (Repository<ExtendUserTable> dataAccessHelper = new Repository<ExtendUserTable>(new Configuration()))
+            {
+                var tempo = Convert.ToInt32(dataAccessHelper.FindById(id).TotalPoints) - quantity;
+                dataAccessHelper.FindById(id).TotalPoints = tempo;
+                dataAccessHelper.SaveChanges();
+            }
         }
     }
 }

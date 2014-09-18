@@ -19,30 +19,30 @@ namespace GIS_Chaser.Controllers
         }
 
         //Get
-        [Route("api/points/{customerId}")]
+        [Route("api/user/{customerId}")]
         public int Get(string customerId)
         {
-            UserModel pointsModel = new UserModel(_userStorage);
-            return pointsModel.GetPoints(customerId);
+            UserModel userModel = new UserModel(_userStorage);
+            return userModel.GetPoints(customerId);
         }
 
-        // GET api/PointsController
+        // GET api/UserController
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // POST api/PointsController
+        // POST api/UserController
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT api/PointsController/5
+        // PUT api/UserController/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/PointsController/5
+        // DELETE api/UserController/5
         public void Delete(int id)
         {
         }

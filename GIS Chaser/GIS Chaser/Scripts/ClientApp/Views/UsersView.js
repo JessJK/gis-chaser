@@ -1,6 +1,6 @@
 ﻿//responsable for rendering the list of customers on the html page
 
-var PointsView = {
+var UsersView = {
     list: function (data) {
         var points = $("#points");
         for (var i = 0; i < data.length; i++) {

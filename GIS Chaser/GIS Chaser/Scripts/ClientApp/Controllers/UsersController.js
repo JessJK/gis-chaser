@@ -1,10 +1,10 @@
 ﻿//Resposable for initiating the view and model and methods for initiating actions within the app
 
-var PointsController = {
-    Get: function (id) {
-        PointsModel.Get(id);
+var UsersController = {
+    GetPoints: function (id) {
+        UsersModel.Get(id);
     },
     DisplayPoints: function (returnedPointsValue) {
-        PointsView.showsingle(returnedPointsValue);
+        UsersView.showsingle(returnedPointsValue);
     }
 };

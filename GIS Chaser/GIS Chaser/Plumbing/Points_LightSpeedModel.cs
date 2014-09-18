@@ -175,6 +175,8 @@ namespace GIS_Chaser.Plumbing
   
     private string _type;
     private string _pointsValue;
+    private string _lat;
+    private string _lng;
     [Column("AspNetUsers")]
     private string _aspNetUsersId;
 
@@ -186,6 +188,10 @@ namespace GIS_Chaser.Plumbing
     public const string TypeField = "Type";
     /// <summary>Identifies the PointsValue entity attribute.</summary>
     public const string PointsValueField = "PointsValue";
+    /// <summary>Identifies the lat entity attribute.</summary>
+    public const string latField = "lat";
+    /// <summary>Identifies the lng entity attribute.</summary>
+    public const string lngField = "lng";
     /// <summary>Identifies the AspNetUsersId entity attribute.</summary>
     public const string AspNetUsersIdField = "AspNetUsersId";
 
@@ -222,6 +228,20 @@ namespace GIS_Chaser.Plumbing
     {
       get { return Get(ref _pointsValue, "PointsValue"); }
       set { Set(ref _pointsValue, value, "PointsValue"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string lat
+    {
+      get { return Get(ref _lat, "lat"); }
+      set { Set(ref _lat, value, "lat"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string lng
+    {
+      get { return Get(ref _lng, "lng"); }
+      set { Set(ref _lng, value, "lng"); }
     }
 
     /// <summary>Gets or sets the ID for the <see cref="AspNetUsers" /> property.</summary>

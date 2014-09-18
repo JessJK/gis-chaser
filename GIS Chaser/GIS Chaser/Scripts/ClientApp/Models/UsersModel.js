@@ -1,20 +1,20 @@
 ﻿//responsable for getting the customers from the app
 
-var PointsModel = {
+var UsersModel = {
     Get: function(id) {
         PointsPlumbing.Get(id);
     },
 
     gotData: function (data) {
         var list = prepData(data);
-        PointsController.DisplayPoints(list);
+        UsersController.DisplayPoints(list);
     },
 };
 
 var prepData = function (data) {
     var list = [];
     data.forEach(function(item) {
-        var customer = new Points(item);
+        var customer = new User(item);
         list.push(customer);
     });
     return list;

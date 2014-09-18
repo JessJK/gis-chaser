@@ -38,6 +38,8 @@
       <entityProperties>
         <entityProperty name="Type" privateSetter="false" />
         <entityProperty name="PointsValue" privateSetter="false" />
+        <entityProperty name="lat" privateSetter="false" />
+        <entityProperty name="lng" privateSetter="false" />
       </entityProperties>
     </entity>
     <entity name="ExtendUserTable" identityType="Int32" cacheExpiry="0">
