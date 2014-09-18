@@ -229,6 +229,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GemController.cs" />
+    <Compile Include="Controllers\HexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SchedulerController.cs" />
@@ -337,6 +338,8 @@
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\MapCreator.js" />
+    <Content Include="Scripts\MapDrawing.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\ClientApp\Plumbing\PointsPlumbing.js" />
@@ -346,6 +349,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\ClientApp\Views\UsersView.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Home\TestView.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -383,6 +387,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\ViewBrowser.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Hex\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

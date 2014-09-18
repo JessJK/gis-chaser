@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.1.0.0" name="GisChaser" targetNamespace="MapDrawTest.Models" databaseProvider="SqlServer2008" connectionString="Data Source=JAGUAR\SQLEXPRESS;Initial Catalog=GisChaser;Integrated Security=True;Pooling=False" pluralizedInDatabase="false" mediumTrustCompatibility="false" xmlns="http://namespaces.mindscape.co.nz/lightspeed">
+  <entities>
+    <entity name="CoordinateDatum" identityType="String" cacheExpiry="0" tableName="CoordinateData">
+      <entityProperties>
+        <entityProperty name="Lat" dataType="SqlGeography" privateSetter="false" />
+        <entityProperty name="Long" dataType="SqlGeography" privateSetter="false" />
+      </entityProperties>
+    </entity>
+  </entities>
+</model>
