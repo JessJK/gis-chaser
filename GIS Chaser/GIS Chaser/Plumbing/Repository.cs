@@ -1,4 +1,5 @@
-﻿using Mindscape.LightSpeed;
+﻿using GIS_Chaser.Models;
+using Mindscape.LightSpeed;
 using Mindscape.LightSpeed.Linq;
 using System;
 using System.Collections.Generic;

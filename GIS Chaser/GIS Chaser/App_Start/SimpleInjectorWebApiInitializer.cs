@@ -1,7 +1,6 @@
 using GIS_Chaser.Plumbing.TableInterfaces;
 using GIS_Chaser.Plumbing.TablePlumbings;
 using GIS_Chaser.ScheduledTasks;
-using GIS_Chaser.ScheduledTasks.Interfaces;
 
 [assembly: WebActivator.PostApplicationStartMethod(typeof(GIS_Chaser.App_Start.SimpleInjectorWebApiInitializer), "Initialize")]
 
@@ -37,7 +36,6 @@ namespace GIS_Chaser.App_Start
             // container.RegisterWebApiRequest<IUserRepository, SqlUserRepository>();
             container.RegisterSingle<IExtendUserTableStorage, ExtendUserTablePlumbing>();
             container.RegisterSingle<IGemStorage, GemsPlumbing>();
-            container.RegisterSingle<IGemScheduleAdd, GemScheduleAdd>();
         }
     }
 }

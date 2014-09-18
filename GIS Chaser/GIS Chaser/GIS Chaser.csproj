@@ -238,7 +238,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GemModel.cs" />
-    <Compile Include="Models\GemTypeModel.cs" />
+    <Compile Include="Models\GemTypeEnum.cs" />
     <Compile Include="Models\Points_LightSpeedModel1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -247,8 +247,6 @@
     <Compile Include="Models\TerritoryModel.cs" />
     <Compile Include="ScheduledTasks\GemScheduleAdd.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="ScheduledTasks\Interfaces\IGemScheduleAdd.cs" />
-    <Compile Include="ScheduledTasks\Interfaces\ITerritorySchedulePoints.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="ScheduledTasks\TerritorySchedulePoints.cs" />
     <Compile Include="ScheduledTasks\AppendToFile.cs" />
@@ -256,11 +254,6 @@
     <Compile Include="Plumbing\Configuration.cs" />
     <Compile Include="Plumbing\ConfigInterfaces\IConfiguration.cs" />
     <Compile Include="Plumbing\ConfigInterfaces\IRepository.cs" />
-    <Compile Include="Models\Points_LightSpeedModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Points_LightSpeedModel.lsmodel</DependentUpon>
-    </Compile>
     <Compile Include="Plumbing\Repository.cs" />
     <Compile Include="Plumbing\TablePlumbings\ExtendUserTablePlumbing.cs" />
     <Compile Include="Plumbing\TablePlumbings\GemsPlumbing.cs" />

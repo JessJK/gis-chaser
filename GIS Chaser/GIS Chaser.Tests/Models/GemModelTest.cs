@@ -4,7 +4,6 @@ using System.Linq;
 using GIS_Chaser.Models;
 using GIS_Chaser.ScheduledTasks;
 using GIS_Chaser.Tests.FakePlumbing;
-using GIS_Chaser.Tests.FakeSchedule;
 using Microsoft.Ajax.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -23,7 +22,7 @@ namespace GIS_Chaser.Tests.Models
 
             //act
             
-            foreach (GemTypeModel.GemTypes gemtypes in (GemTypeModel.GemTypes[]) Enum.GetValues(typeof(GemTypeModel.GemTypes)))
+            foreach (GemTypesEnum.GemTypes gemtypes in (GemTypesEnum.GemTypes[]) Enum.GetValues(typeof(GemTypesEnum.GemTypes)))
             {
                 gemList.Add(gemtypes.ToString());
             }
@@ -33,6 +32,7 @@ namespace GIS_Chaser.Tests.Models
 
             Assert.IsTrue(actual > 1);
         }
+
         [TestMethod]
         public void Some_gems_will_be_more_valuable_than_others()
         {
@@ -43,7 +43,7 @@ namespace GIS_Chaser.Tests.Models
 
             //act
 
-            foreach (GemTypeModel.GemTypes gemtypes in (GemTypeModel.GemTypes[])Enum.GetValues(typeof(GemTypeModel.GemTypes)))
+            foreach (GemTypesEnum.GemTypes gemtypes in (GemTypesEnum.GemTypes[])Enum.GetValues(typeof(GemTypesEnum.GemTypes)))
             {
                 gemValueList.Add((int)gemtypes);
             }
@@ -54,21 +54,22 @@ namespace GIS_Chaser.Tests.Models
 
             Assert.IsTrue(valueOfList > countOfList);
         }
+
         [TestMethod]
-        public void A_Gem_is_created_more_than_once()
+        public void A_Gem_is_Created_with_expected_properties()
         {
             //arrange
-            GemModel userModel = new GemModel(new GemsPlumbingFake(), new GemScheduleAddFake());
+            GemModel userModel = new GemModel(new GemsPlumbingFake());
+            var expected = GemTypesEnum.GemTypes.Gold;
 
             //act
-            userModel.AutoAddGem();
-            var gems = userModel.GetGems();
+            var gem = userModel.AssembleGem(1, 5, 41.122, 41.522);
 
             //assert
-            Assert.AreEqual();
-            //assert that the number of gems in the fake db is 10(arbitary number)
-
+            Assert.AreEqual(gem.PointsValue, 5);
+            Assert.AreEqual(gem.Type, (int)expected);
+            Assert.AreEqual(gem.Latitude, 41.122);
+            Assert.AreEqual(gem.Longitude, 41.522);
         }
-
     }
 }

@@ -135,8 +135,8 @@
     <Compile Include="Controllers\UserControllerTest.cs" />
     <Compile Include="FakePlumbing\GemsPlumbingFake.cs" />
     <Compile Include="FakePlumbing\ExtendUserTablePlumbingFake.cs" />
-    <Compile Include="FakeSchedule\GemScheduleAddFake.cs" />
     <Compile Include="Models\GemModelTest.cs" />
+    <Compile Include="Models\TerritoryModelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>

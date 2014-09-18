@@ -63,9 +63,9 @@ namespace GIS_Chaser.Models
     #region Relationships
 
     [ReverseAssociation("AspNetUsers")]
-    private readonly EntityCollection<Gems> _gems = new EntityCollection<Gems>();
-    [ReverseAssociation("AspNetUsers")]
     private readonly EntityCollection<ExtendUserTable> _extendUserTables = new EntityCollection<ExtendUserTable>();
+    [ReverseAssociation("AspNetUsers")]
+    private readonly EntityCollection<Gems> _gems = new EntityCollection<Gems>();
 
 
     #endregion
@@ -73,15 +73,15 @@ namespace GIS_Chaser.Models
     #region Properties
 
     [System.Diagnostics.DebuggerNonUserCode]
-    public EntityCollection<Gems> Gems
-    {
-      get { return Get(_gems); }
-    }
-
-    [System.Diagnostics.DebuggerNonUserCode]
     public EntityCollection<ExtendUserTable> ExtendUserTables
     {
       get { return Get(_extendUserTables); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public EntityCollection<Gems> Gems
+    {
+      get { return Get(_gems); }
     }
 
 
@@ -173,11 +173,14 @@ namespace GIS_Chaser.Models
   {
     #region Fields
   
-    private string _type;
-    private string _pointsValue;
-    private string _lat;
-    private string _lng;
-    [Column("AspNetUsers")]
+    private int _type;
+    private int _pointsValue;
+    [ValidatePresence]
+    [ValidateLength(0, 10)]
+    private double _latitude;
+    [ValidatePresence]
+    [ValidateLength(0, 10)]
+    private double _longitude;
     private string _aspNetUsersId;
 
     #endregion
@@ -188,10 +191,10 @@ namespace GIS_Chaser.Models
     public const string TypeField = "Type";
     /// <summary>Identifies the PointsValue entity attribute.</summary>
     public const string PointsValueField = "PointsValue";
-    /// <summary>Identifies the lat entity attribute.</summary>
-    public const string latField = "lat";
-    /// <summary>Identifies the lng entity attribute.</summary>
-    public const string lngField = "lng";
+    /// <summary>Identifies the Latitude entity attribute.</summary>
+    public const string LatitudeField = "Latitude";
+    /// <summary>Identifies the Longitude entity attribute.</summary>
+    public const string LongitudeField = "Longitude";
     /// <summary>Identifies the AspNetUsersId entity attribute.</summary>
     public const string AspNetUsersIdField = "AspNetUsersId";
 
@@ -217,31 +220,31 @@ namespace GIS_Chaser.Models
 
 
     [System.Diagnostics.DebuggerNonUserCode]
-    public string Type
+    public int Type
     {
       get { return Get(ref _type, "Type"); }
       set { Set(ref _type, value, "Type"); }
     }
 
     [System.Diagnostics.DebuggerNonUserCode]
-    public string PointsValue
+    public int PointsValue
     {
       get { return Get(ref _pointsValue, "PointsValue"); }
       set { Set(ref _pointsValue, value, "PointsValue"); }
     }
 
     [System.Diagnostics.DebuggerNonUserCode]
-    public string lat
+    public double Latitude
     {
-      get { return Get(ref _lat, "lat"); }
-      set { Set(ref _lat, value, "lat"); }
+      get { return Get(ref _latitude, "Latitude"); }
+      set { Set(ref _latitude, value, "Latitude"); }
     }
 
     [System.Diagnostics.DebuggerNonUserCode]
-    public string lng
+    public double Longitude
     {
-      get { return Get(ref _lng, "lng"); }
-      set { Set(ref _lng, value, "lng"); }
+      get { return Get(ref _longitude, "Longitude"); }
+      set { Set(ref _longitude, value, "Longitude"); }
     }
 
     /// <summary>Gets or sets the ID for the <see cref="AspNetUsers" /> property.</summary>

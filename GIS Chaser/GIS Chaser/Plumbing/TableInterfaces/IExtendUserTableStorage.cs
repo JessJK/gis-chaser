@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GIS_Chaser;
+using GIS_Chaser.Models;
 
 namespace GIS_Chaser.Plumbing.TableInterfaces
 {

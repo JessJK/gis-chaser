@@ -1,6 +1,6 @@
 ﻿namespace GIS_Chaser.Models
 {
-    public class GemTypeModel
+    public class GemTypesEnum
     {
         public enum GemTypes
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using GIS_Chaser.Models;
 using GIS_Chaser.Plumbing.TableInterfaces;
 
 namespace GIS_Chaser.Plumbing.TablePlumbings
@@ -11,7 +12,11 @@ namespace GIS_Chaser.Plumbing.TablePlumbings
     {
         public void Persist(Gems gem)
         {
-            throw new NotImplementedException();
+            using (Repository<Gems> dataAccessHelper = new Repository<Gems>(new Configuration()))
+            {
+                dataAccessHelper.Add(gem);
+                dataAccessHelper.SaveChanges();
+            }
         }
 
         public Gems Retrieve(string id)

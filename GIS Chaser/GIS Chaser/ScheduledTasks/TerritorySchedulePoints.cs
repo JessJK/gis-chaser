@@ -1,10 +1,9 @@
 ﻿using System.Diagnostics;
-using GIS_Chaser.ScheduledTasks.Interfaces;
 using Quartz;
 
 namespace GIS_Chaser.ScheduledTasks
 {
-    public class TerritorySchedulePoints : ITerritorySchedulePoints, IJob
+    public class TerritorySchedulePoints :  IJob
     {
         public void Execute(IJobExecutionContext context)
         {
