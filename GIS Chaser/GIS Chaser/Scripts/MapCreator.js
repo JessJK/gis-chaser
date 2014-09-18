@@ -5,33 +5,37 @@
         zoom: 18
     };
 
-    console.log(mapOptions);
+    
     var map = new google.maps.Map(document.getElementById('map-canvas'),
     mapOptions);
 
     
-    var hex = new HexGrid(data.coords.latitude, data.coords.longitude, 0.001);
+    var hexes = new HexGrid(data.coords.latitude, data.coords.longitude, 0.001);
 
-    var properHex = hex.GetHexes();
+    var properHexes = hexes.GetHexes();
 
-    console.table(properHex);
-    var myCoordinates = [];
+   // console.table(properHexes);
+    $.each(properHexes, function(index, value) {
 
-    $.each(properHex, function (index, value) {
-        myCoordinates.push(new google.maps.LatLng(value.lat, value.lng));
+       
+        var myCoordinates = [];
+
+        $.each(value, function(index2, value2) {
+            myCoordinates.push(new google.maps.LatLng(value2.lat, value2.lng));
+        });
+
+        var polyOptions = {
+            path: myCoordinates,
+            strokeColor: "#FF0000",
+            strokeOpacity: 1,
+            strokeWeight: 1
+        }
+
+        var hex = new google.maps.Polygon(polyOptions);
+        hex.setMap(map);
+
     });
 
-    var polyOptions = {
-        path: myCoordinates,
-        strokeColor: "#FF0000",
-        strokeOpacity: 1,
-        strokeWeight: 1
-    }
-
-    var hex = new google.maps.Polygon(polyOptions);
-    hex.setMap(map);
-
-   
 
 }
 
@@ -89,6 +93,7 @@ Hex.prototype.CornerFromCentre = function() {
 
 function HexGrid(latitude, longitude, size) {
 
+    this.size = size;
     this.centreRadiusLatitude = latitude;
     this.centreRadiusLongitude = longitude;
 
@@ -115,7 +120,10 @@ HexGrid.prototype.CornerFromCentre = function () {
 
 HexGrid.prototype.GetHexes = function () {
 
+    
     var polys = [];
+
+
     var gridPoints = this.GetGridPoints(10, 10);
     //var allGridPoints = gridPoints.concat(GetGridPoints)
     $.each(gridPoints, function(index, value) {
@@ -132,12 +140,12 @@ HexGrid.prototype.GetGridPoints = function(n, m) {
 
     var gridPoints = [];
 
-    for (var i = 1; i = n; i++) {
+    for (var i = 1; i < n; i++) {
 
-        console.log(i);
+        
         var pointlat = this.offsetLatitude + (1.5 * this.width * i);
         //lat + 1.5 width * i
-        for (var j = 1; j = m; j++) {
+        for (var j = 1; j < m; j++) {
 
             var pointlng = this.offsetLongitude - (1 * this.height * j);
             gridPoints.push({lat: pointlat, lng: pointlng});
