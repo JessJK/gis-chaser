@@ -306,7 +306,6 @@
     <Content Include="Content\pure-release-0.5.0\README.md" />
     <Content Include="Plumbing\Points_LightSpeedModel.lsmodel">
       <Generator>LightSpeedModelGenerator</Generator>
-      <LastGenOutput>Points_LightSpeedModel.cs</LastGenOutput>
     </Content>
     <Content Include="Plumbing\Points_LightSpeedModel.lsmodel.diagram">
       <DependentUpon>Points_LightSpeedModel.lsmodel</DependentUpon>
