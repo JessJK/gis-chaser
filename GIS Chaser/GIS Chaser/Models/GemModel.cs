@@ -18,11 +18,16 @@ namespace GIS_Chaser.Models
             _gemAdd = gemAdd;
         }
 
-        public int GetGems(string id)
+        public int GetGems()
         {
             return _gemStorage.GetAll().Count;
         }
 
 
+
+        public void AutoAddGem()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

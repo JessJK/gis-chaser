@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using GIS_Chaser.Models;
+using GIS_Chaser.ScheduledTasks;
+using GIS_Chaser.Tests.FakePlumbing;
+using GIS_Chaser.Tests.FakeSchedule;
 using Microsoft.Ajax.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -51,5 +54,21 @@ namespace GIS_Chaser.Tests.Models
 
             Assert.IsTrue(valueOfList > countOfList);
         }
+        [TestMethod]
+        public void A_Gem_is_created_more_than_once()
+        {
+            //arrange
+            GemModel userModel = new GemModel(new GemsPlumbingFake(), new GemScheduleAddFake());
+
+            //act
+            userModel.AutoAddGem();
+            var gems = userModel.GetGems();
+
+            //assert
+            Assert.AreEqual();
+            //assert that the number of gems in the fake db is 10(arbitary number)
+
+        }
+
     }
 }

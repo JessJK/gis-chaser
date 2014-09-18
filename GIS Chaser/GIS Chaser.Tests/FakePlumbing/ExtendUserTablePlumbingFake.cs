@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GIS_Chaser.Plumbing;
 using GIS_Chaser.Plumbing.TableInterfaces;
 
-namespace GIS_Chaser.Tests.Models
+namespace GIS_Chaser.Tests.FakePlumbing
 {
-    class PointsPlumbingFake : IExtendUserTableStorage
+    class ExtendUserTablePlumbingFake : IExtendUserTableStorage
     {
         public void Persist(ExtendUserTable user)
         {
