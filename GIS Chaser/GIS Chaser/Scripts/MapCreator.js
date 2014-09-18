@@ -46,6 +46,8 @@ function Hex(latitude, longitude, size) {
 
      this.offsetLatitude = latitude;
      this.offsetLongitude = longitude;
+
+    //fix this formula
      this.width = (size * 2) * (1 / Math.sin(latitude) * 0.8);
      this.height = Math.sqrt(3) / 2.4 * this.width;
     
@@ -99,6 +101,8 @@ function HexGrid(latitude, longitude, size) {
 
     this.offsetLatitude = latitude;
     this.offsetLongitude = longitude;
+
+    //Extract height and width into function and use that insted
     this.width = (size * 2) * (1 / Math.sin(latitude) * 0.8);
     this.height = Math.sqrt(3) / 2.4 * this.width;
 
@@ -126,14 +130,13 @@ HexGrid.prototype.GetHexes = function () {
     var sizelocal = this.size;
     var gridPoints = this.GetGridPoints(10, 10);
 
-    //
     this.offsetLatitude -= (1 / 2 * this.height);
     this.offsetLongitude += (3 / 4 * this.width);
 
     var allGridPoints = gridPoints.concat(this.GetGridPoints(10, 10));
     $.each(allGridPoints, function (index, value) {
 
-        var hex = new Hex(value.lat, value.lng, sizelocal * 1.02);
+        var hex = new Hex(value.lat, value.lng, sizelocal);
         polys.push(hex.GetHexPoly());
     });
 
