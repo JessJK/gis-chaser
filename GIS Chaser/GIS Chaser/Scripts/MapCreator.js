@@ -125,10 +125,15 @@ HexGrid.prototype.GetHexes = function () {
 
     var sizelocal = this.size;
     var gridPoints = this.GetGridPoints(10, 10);
-    //var allGridPoints = gridPoints.concat(GetGridPoints)
-    $.each(gridPoints, function(index, value) {
 
-        var hex = new Hex(value.lat, value.lng, sizelocal);
+    //
+    this.offsetLatitude -= (1 / 2 * this.height);
+    this.offsetLongitude += (3 / 4 * this.width);
+
+    var allGridPoints = gridPoints.concat(this.GetGridPoints(10, 10));
+    $.each(allGridPoints, function (index, value) {
+
+        var hex = new Hex(value.lat, value.lng, sizelocal * 1.02);
         polys.push(hex.GetHexPoly());
     });
 
@@ -140,14 +145,14 @@ HexGrid.prototype.GetGridPoints = function(n, m) {
 
     var gridPoints = [];
 
-    for (var i = 1; i < n; i++) {
+    for (var i = 0; i < n; i++) {
 
         
-        var pointlat = this.offsetLatitude + (1 * this.height * i);
+        var pointlat = this.offsetLatitude - (1 * this.height * i);
         //lat + 1.5 width * i
-        for (var j = 1; j < m; j++) {
+        for (var j = 0; j < m; j++) {
 
-            var pointlng = this.offsetLongitude - (1.5 * this.width * j);
+            var pointlng = this.offsetLongitude + (1.5 * this.width * j);
             gridPoints.push({lat: pointlat, lng: pointlng});
 
         }
