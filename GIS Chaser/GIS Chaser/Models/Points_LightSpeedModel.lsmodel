@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.1.0.0" name="Points_LightSpeedModel" targetNamespace="GIS_Chaser.Plumbing" databaseProvider="SqlServer2012" connectionString="Data Source=Cheetah\sqlexpress;Initial Catalog=GISChaser;Integrated Security=True" pluralizedInDatabase="false" mediumTrustCompatibility="false" checkForMissingKeyTable="false" xmlns="http://namespaces.mindscape.co.nz/lightspeed">
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.1.0.0" name="Points_LightSpeedModel" targetNamespace="GIS_Chaser.Models" databaseProvider="SqlServer2012" connectionString="Data Source=Cheetah\sqlexpress;Initial Catalog=GISChaser;Integrated Security=True" pluralizedInDatabase="false" mediumTrustCompatibility="false" checkForMissingKeyTable="false" xmlns="http://namespaces.mindscape.co.nz/lightspeed">
   <entities>
     <entity name="AspNetUser" identityType="String" cacheExpiry="0" tableName="AspNetUsers">
       <entityProperties>

@@ -4,7 +4,6 @@ using GIS_Chaser;
 using GIS_Chaser.Models;
 using GIS_Chaser.Plumbing.TablePlumbings;
 using GIS_Chaser.ScheduledTasks;
-using GIS_Chaser.Services.Interfaces;
 using System.Reflection;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;

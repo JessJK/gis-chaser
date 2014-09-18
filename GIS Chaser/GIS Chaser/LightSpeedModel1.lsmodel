@@ -1,3 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<model dslVersion="1.1.0.0" name="LightSpeedModel1" targetNamespace="GIS_Chaser" xmlns="http://namespaces.mindscape.co.nz/lightspeed" />
- 
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.1.0.0" name="LightSpeedModel1" targetNamespace="GIS_Chaser" databaseProvider="SqlServer2008" connectionString="Data Source=Cheetah\sqlexpress;Initial Catalog=GISChaser;Integrated Security=True;Pooling=False" pluralizedInDatabase="false" mediumTrustCompatibility="false" xmlns="http://namespaces.mindscape.co.nz/lightspeed">
+  <entities>
+    <entity name="AspNetUser" identityType="String" cacheExpiry="0" tableName="AspNetUsers">
+      <entityProperties>
+        <entityProperty name="Email" isNullable="true" privateSetter="false">
+          <validations>
+            <emailValidation />
+            <lengthValidation minimumLength="0" maximumLength="256" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="EmailConfirmed" dataType="Boolean" privateSetter="false" />
+        <entityProperty name="PasswordHash" isNullable="true" privateSetter="false" />
+        <entityProperty name="SecurityStamp" isNullable="true" privateSetter="false" />
+        <entityProperty name="PhoneNumber" isNullable="true" privateSetter="false" />
+        <entityProperty name="PhoneNumberConfirmed" dataType="Boolean" privateSetter="false" />
+        <entityProperty name="TwoFactorEnabled" dataType="Boolean" privateSetter="false" />
+        <entityProperty name="LockoutEndDateUtc" dataType="DateTime" isNullable="true" privateSetter="false" />
+        <entityProperty name="LockoutEnabled" dataType="Boolean" privateSetter="false" />
+        <entityProperty name="AccessFailedCount" dataType="Int32" privateSetter="false" />
+        <entityProperty name="UserName" privateSetter="false">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="256" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="fbabecfc-5757-4553-a893-6d4dc2170ae1" collectionName="ExtendUserTables" backreferenceName="AspNetUsers" isNullable="false" columnName="AspNetUsers">
+          <entityMoniker name="/LightSpeedModel1/ExtendUserTable" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="8430d15c-8b5b-4a34-9c2f-6344431fad8f" collectionName="Gems" backreferenceName="AspNetUsers" isNullable="true" columnName="AspNetUsers">
+          <entityMoniker name="/LightSpeedModel1/Gem" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="ExtendUserTable" identityType="Int32" cacheExpiry="0">
+      <entityProperties>
+        <entityProperty name="TotalPoints" dataType="Int32" privateSetter="false" />
+      </entityProperties>
+    </entity>
+    <entity name="Gem" identityType="Int32" cacheExpiry="0" tableName="Gems">
+      <entityProperties>
+        <entityProperty name="Type" dataType="Int32" privateSetter="false" />
+        <entityProperty name="PointsValue" privateSetter="false">
+          <validations>
+            <presenceValidation />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Lat" privateSetter="false">
+          <validations>
+            <presenceValidation />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Lng" privateSetter="false">
+          <validations>
+            <presenceValidation />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+    </entity>
+  </entities>
+</model>

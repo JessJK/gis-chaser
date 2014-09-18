@@ -4,7 +4,7 @@ using Mindscape.LightSpeed;
 using Mindscape.LightSpeed.Validation;
 using Mindscape.LightSpeed.Linq;
 
-namespace GIS_Chaser
+namespace GIS_Chaser.Models
 {
   [Serializable]
   [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
@@ -63,9 +63,9 @@ namespace GIS_Chaser
     #region Relationships
 
     [ReverseAssociation("AspNetUsers")]
-    private readonly EntityCollection<ExtendUserTable> _extendUserTables = new EntityCollection<ExtendUserTable>();
+    private readonly EntityCollection<Gems> _gems = new EntityCollection<Gems>();
     [ReverseAssociation("AspNetUsers")]
-    private readonly EntityCollection<Gem> _gems = new EntityCollection<Gem>();
+    private readonly EntityCollection<ExtendUserTable> _extendUserTables = new EntityCollection<ExtendUserTable>();
 
 
     #endregion
@@ -73,15 +73,15 @@ namespace GIS_Chaser
     #region Properties
 
     [System.Diagnostics.DebuggerNonUserCode]
-    public EntityCollection<ExtendUserTable> ExtendUserTables
+    public EntityCollection<Gems> Gems
     {
-      get { return Get(_extendUserTables); }
+      get { return Get(_gems); }
     }
 
     [System.Diagnostics.DebuggerNonUserCode]
-    public EntityCollection<Gem> Gems
+    public EntityCollection<ExtendUserTable> ExtendUserTables
     {
-      get { return Get(_gems); }
+      get { return Get(_extendUserTables); }
     }
 
 
@@ -169,6 +169,96 @@ namespace GIS_Chaser
   [Serializable]
   [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
   [System.ComponentModel.DataObject]
+  public partial class Gems : Entity<int>
+  {
+    #region Fields
+  
+    private string _type;
+    private string _pointsValue;
+    private string _lat;
+    private string _lng;
+    [Column("AspNetUsers")]
+    private string _aspNetUsersId;
+
+    #endregion
+    
+    #region Field attribute and view names
+    
+    /// <summary>Identifies the Type entity attribute.</summary>
+    public const string TypeField = "Type";
+    /// <summary>Identifies the PointsValue entity attribute.</summary>
+    public const string PointsValueField = "PointsValue";
+    /// <summary>Identifies the lat entity attribute.</summary>
+    public const string latField = "lat";
+    /// <summary>Identifies the lng entity attribute.</summary>
+    public const string lngField = "lng";
+    /// <summary>Identifies the AspNetUsersId entity attribute.</summary>
+    public const string AspNetUsersIdField = "AspNetUsersId";
+
+
+    #endregion
+    
+    #region Relationships
+
+    [ReverseAssociation("Gems")]
+    private readonly EntityHolder<AspNetUser> _aspNetUsers = new EntityHolder<AspNetUser>();
+
+
+    #endregion
+    
+    #region Properties
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public AspNetUser AspNetUsers
+    {
+      get { return Get(_aspNetUsers); }
+      set { Set(_aspNetUsers, value); }
+    }
+
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Type
+    {
+      get { return Get(ref _type, "Type"); }
+      set { Set(ref _type, value, "Type"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string PointsValue
+    {
+      get { return Get(ref _pointsValue, "PointsValue"); }
+      set { Set(ref _pointsValue, value, "PointsValue"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string lat
+    {
+      get { return Get(ref _lat, "lat"); }
+      set { Set(ref _lat, value, "lat"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string lng
+    {
+      get { return Get(ref _lng, "lng"); }
+      set { Set(ref _lng, value, "lng"); }
+    }
+
+    /// <summary>Gets or sets the ID for the <see cref="AspNetUsers" /> property.</summary>
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string AspNetUsersId
+    {
+      get { return Get(ref _aspNetUsersId, "AspNetUsersId"); }
+      set { Set(ref _aspNetUsersId, value, "AspNetUsersId"); }
+    }
+
+    #endregion
+  }
+
+
+  [Serializable]
+  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
+  [System.ComponentModel.DataObject]
   public partial class ExtendUserTable : Entity<int>
   {
     #region Fields
@@ -226,107 +316,13 @@ namespace GIS_Chaser
   }
 
 
-  [Serializable]
-  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
-  [System.ComponentModel.DataObject]
-  [Table("Gems")]
-  public partial class Gem : Entity<int>
-  {
-    #region Fields
-  
-    private int _type;
-    [ValidatePresence]
-    private string _pointsValue;
-    [ValidatePresence]
-    private string _lat;
-    [ValidatePresence]
-    private string _lng;
-    [Column("AspNetUsers")]
-    private string _aspNetUsersId;
-
-    #endregion
-    
-    #region Field attribute and view names
-    
-    /// <summary>Identifies the Type entity attribute.</summary>
-    public const string TypeField = "Type";
-    /// <summary>Identifies the PointsValue entity attribute.</summary>
-    public const string PointsValueField = "PointsValue";
-    /// <summary>Identifies the Lat entity attribute.</summary>
-    public const string LatField = "Lat";
-    /// <summary>Identifies the Lng entity attribute.</summary>
-    public const string LngField = "Lng";
-    /// <summary>Identifies the AspNetUsersId entity attribute.</summary>
-    public const string AspNetUsersIdField = "AspNetUsersId";
-
-
-    #endregion
-    
-    #region Relationships
-
-    [ReverseAssociation("Gems")]
-    private readonly EntityHolder<AspNetUser> _aspNetUsers = new EntityHolder<AspNetUser>();
-
-
-    #endregion
-    
-    #region Properties
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public AspNetUser AspNetUsers
-    {
-      get { return Get(_aspNetUsers); }
-      set { Set(_aspNetUsers, value); }
-    }
-
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public int Type
-    {
-      get { return Get(ref _type, "Type"); }
-      set { Set(ref _type, value, "Type"); }
-    }
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public string PointsValue
-    {
-      get { return Get(ref _pointsValue, "PointsValue"); }
-      set { Set(ref _pointsValue, value, "PointsValue"); }
-    }
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public string Lat
-    {
-      get { return Get(ref _lat, "Lat"); }
-      set { Set(ref _lat, value, "Lat"); }
-    }
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public string Lng
-    {
-      get { return Get(ref _lng, "Lng"); }
-      set { Set(ref _lng, value, "Lng"); }
-    }
-
-    /// <summary>Gets or sets the ID for the <see cref="AspNetUsers" /> property.</summary>
-    [System.Diagnostics.DebuggerNonUserCode]
-    public string AspNetUsersId
-    {
-      get { return Get(ref _aspNetUsersId, "AspNetUsersId"); }
-      set { Set(ref _aspNetUsersId, value, "AspNetUsersId"); }
-    }
-
-    #endregion
-  }
-
-
 
 
   /// <summary>
-  /// Provides a strong-typed unit of work for working with the LightSpeedModel1 model.
+  /// Provides a strong-typed unit of work for working with the Points_LightSpeedModel model.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
-  public partial class LightSpeedModel1UnitOfWork : Mindscape.LightSpeed.UnitOfWork
+  public partial class Points_LightSpeedModelUnitOfWork : Mindscape.LightSpeed.UnitOfWork
   {
 
     public System.Linq.IQueryable<AspNetUser> AspNetUsers
@@ -334,14 +330,14 @@ namespace GIS_Chaser
       get { return this.Query<AspNetUser>(); }
     }
     
+    public System.Linq.IQueryable<Gems> Gems
+    {
+      get { return this.Query<Gems>(); }
+    }
+    
     public System.Linq.IQueryable<ExtendUserTable> ExtendUserTables
     {
       get { return this.Query<ExtendUserTable>(); }
-    }
-    
-    public System.Linq.IQueryable<Gem> Gems
-    {
-      get { return this.Query<Gem>(); }
     }
     
   }
