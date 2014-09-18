@@ -17,6 +17,11 @@ textarea {
     max-width: 280px;
 }
 
+#map-canvas {
+    height: 600px;
+
+
+}
 /* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;
